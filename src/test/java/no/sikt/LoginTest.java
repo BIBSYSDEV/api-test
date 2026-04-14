@@ -19,14 +19,14 @@ public class LoginTest {
     private static final String TEST_CUSTOMER_ID = "702c4fbe-d51a-4d20-aec8-50beb813ff36"; // Example customer ID
     private String accessToken;
 
-    // @BeforeEach
+    @BeforeEach
     void setUp() throws Exception {
         RestAssured.baseURI = BASE_URI;
         Map<String, String> tokens = CognitoLogin.login("test-user-project-manager@test.no");
         accessToken = tokens.get("accessToken");
     }
 
-    // @Test
+    @Test
     public void testLogin() throws Exception {
         Map<String, String> tokens = CognitoLogin.login("test-user-project-manager@test.no");
         assert tokens.get("accessToken") != null;

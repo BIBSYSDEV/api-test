@@ -17,7 +17,7 @@ public class ApprovalApiTest {
             .get("accessToken");
 
 
-    // @Test
+    @Test
     public void testCreate() {
         RestAssured.baseURI = BASE_URL;
         given()
